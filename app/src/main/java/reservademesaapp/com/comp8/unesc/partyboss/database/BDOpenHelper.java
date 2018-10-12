@@ -12,7 +12,7 @@ public class BDOpenHelper extends SQLiteOpenHelper {
     private static final int
     DATABASE_VERSAO = 1;
 
-    public DBOpenHelper(Context context){
+    public BDOpenHelper(Context context){
          super (context, DATABASE_NOME, null, DATABASE_VERSAO);
     }
     @Override

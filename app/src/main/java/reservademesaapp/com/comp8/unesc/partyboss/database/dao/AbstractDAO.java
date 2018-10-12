@@ -1,12 +1,15 @@
 package reservademesaapp.com.comp8.unesc.partyboss.database.dao;
 
 import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import reservademesaapp.com.comp8.unesc.partyboss.database.BDOpenHelper;
 
 public abstract class AbstractDAO {
 
-    protected SQLiteOpenHelper db;
-    protected DBOpenHelper db_helper;
+    protected SQLiteDatabase db;
+    protected BDOpenHelper db_helper;
 
     protected final void Open() throws SQLException{
         //Recebi a instacia do banco de dados.
