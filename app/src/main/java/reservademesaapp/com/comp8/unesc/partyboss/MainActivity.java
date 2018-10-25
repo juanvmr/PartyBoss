@@ -1,8 +1,11 @@
 package reservademesaapp.com.comp8.unesc.partyboss;
 
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,6 +15,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -29,10 +35,19 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+                clearAppBarContents();
             }
         });
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        TextView novoUsuario = (TextView)findViewById(R.id.novoUsuarioTextView);
+        novoUsuario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setFAB();
+            }
+        });
+
+                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -40,6 +55,18 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        setAppBarContents();
+
+        Button entrarButton = (Button)findViewById(R.id.loginEntrarButton);
+        final CheckBox keepOnline = (CheckBox)findViewById(R.id.keepUserCheckBox);
+        entrarButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(keepOnline.isActivated()){
+
+                }
+            }
+        });
     }
 
     @Override
@@ -97,5 +124,22 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void setAppBarContents(){
+        View view = LayoutInflater.from(getApplicationContext()).inflate(R.layout.telainicial_appbar_include, null);
+        AppBarLayout appBar = (AppBarLayout)findViewById(R.id.mainAppBar);
+        appBar.addView(view);
+    }
+
+    public void clearAppBarContents(){
+        AppBarLayout appBar = (AppBarLayout)findViewById(R.id.mainAppBar);
+        appBar.removeView(findViewById(R.id.telaInicialAppBar));
+    }
+
+    public void setFAB(){
+        View fab = LayoutInflater.from(getApplicationContext()).inflate(R.layout.floatingactionbutton,null);
+        CoordinatorLayout appBar = (CoordinatorLayout)findViewById(R.id.appBarContent);
+        appBar.addView(fab);
     }
 }
