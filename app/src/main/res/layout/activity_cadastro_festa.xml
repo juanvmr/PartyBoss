@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".TelaInicialActivity"
+    android:background="@color/colorAccent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/tipoEventoCadastro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:hint="@string/evento_cadastro_tipo"
+            android:textColorHint="@color/textColor1"/>
+
+        <EditText
+            android:id="@+id/nomeContratanteCadastro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:hint="@string/evento_cadastro_contratante"
+            android:textColorHint="@color/textColor1"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+
+            <EditText
+                android:id="@+id/dataInicialCadastro"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:hint="@string/evento_cadastro_data_inicial"
+                android:textColorHint="@color/textColor1"/>
+
+            <EditText
+                android:id="@+id/dataFinalCadastro"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:hint="@string/evento_cadastro_data_final"
+                android:textColorHint="@color/textColor1"/>
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/localEventoCadastro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:hint="@string/evento_cadastro_local"
+            android:textColorHint="@color/textColor1"/>
+
+        <EditText
+            android:id="@+id/valorEntradaCadastro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:hint="@string/evento_cadastro_valor_entrada"
+            android:textColorHint="@color/textColor1"/>
+
+        <EditText
+            android:id="@+id/buffetResponsavelCadastro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:hint="@string/evento_cadastro_buffet"
+            android:textColorHint="@color/textColor1"/>
+
+        <EditText
+            android:id="@+id/bebidasResponsavelCadastro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:hint="@string/evento_cadastro_bebida"
+            android:textColorHint="@color/textColor1"/>
+
+        <EditText
+            android:id="@+id/musicaResponsavelCadastro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:hint="@string/evento_cadastro_musica"
+            android:textColorHint="@color/textColor1"/>
+
+        <EditText
+            android:id="@+id/decoracaoResponsavelCadastro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:hint="@string/evento_cadastro_decoracao"
+            android:textColorHint="@color/textColor1"/>
+
+        <Button
+            android:id="@+id/eventoCadastrarButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:text="@string/cadastrar_button"
+            android:background="@color/colorPrimary"/>
+
+    </LinearLayout>
+
+</ScrollView>

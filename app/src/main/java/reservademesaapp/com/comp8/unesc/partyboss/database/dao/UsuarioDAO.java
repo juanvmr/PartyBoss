@@ -4,6 +4,7 @@ import android.content.Context;
 
 import java.util.List;
 
+import reservademesaapp.com.comp8.unesc.partyboss.database.BDOpenHelper;
 import reservademesaapp.com.comp8.unesc.partyboss.database.model.UsuarioModel;
 
 public class UsuarioDAO extends AbstractDAO {
@@ -17,7 +18,7 @@ public class UsuarioDAO extends AbstractDAO {
             };
     public UsuarioDAO(Context context){
         //Cria o DBHelper.
-        db_helper = new DBOpenHelber(dao_context);
+        db_helper = new BDOpenHelper(context);
     }
     public int Insert(){
         return 0;
